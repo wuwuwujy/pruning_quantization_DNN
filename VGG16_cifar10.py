@@ -87,7 +87,7 @@ class VGG16(nn.Module):
 
 if __name__ == "__main__":
 
-    filepath = '../CIFAR10_dataset'
+    filepath = './CIFAR10_dataset'
     #data loading and augmentation
     #cifar 10 normalization parameter https://arxiv.org/pdf/1909.12205.pdf
     train_transformations = transforms.Compose([transforms.RandomHorizontalFlip(), 
@@ -147,3 +147,5 @@ if __name__ == "__main__":
             correct += (predicted == labels).sum().item()
         
         print('Test Accuracy:{:.2f}%'.format(correct / total * 100.))
+
+    torch.save(model.state_dict(), './VGG16_model')

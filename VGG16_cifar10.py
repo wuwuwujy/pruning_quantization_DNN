@@ -148,4 +148,4 @@ if __name__ == "__main__":
         
         print('Test Accuracy:{:.2f}%'.format(correct / total * 100.))
 
-    torch.save(model.state_dict(), './VGG16_model')
+    torch.save(model.state_dict(), './VGG16_model.pth')
